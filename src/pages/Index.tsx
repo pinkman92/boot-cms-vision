@@ -44,9 +44,13 @@ const Index = () => {
         </div>
 
         {/* Recently Published and Social Distribution */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <RecentlyPublished />
-          <SocialDistribution />
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="lg:w-[70%]">
+            <RecentlyPublished />
+          </div>
+          <div className="lg:w-[30%]">
+            <SocialDistribution />
+          </div>
         </div>
 
         {/* Quick Actions */}
