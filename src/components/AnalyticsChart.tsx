@@ -13,20 +13,20 @@ export const AnalyticsChart = () => {
   return (
     <div className="card p-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h5 className="mb-0 fw-semibold">ANALYTICS</h5>
-        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
+        <h5 className="section-title">ANALYTICS</h5>
+        <a href="#" className="view-all-link">
           View All →
-        </button>
+        </a>
       </div>
 
       <div className="row mb-4">
         <div className="col-6">
-          <div className="h3 fw-bold mb-1">1.2M</div>
-          <div className="small text-muted">Video Views</div>
+          <div className="h2 fw-bold mb-1" style={{ color: '#1e293b' }}>1.2M</div>
+          <div className="small text-muted fw-medium">Video Views</div>
         </div>
         <div className="col-6">
-          <div className="h3 fw-bold mb-1">4:32</div>
-          <div className="small text-muted">Avg Watchtime</div>
+          <div className="h2 fw-bold mb-1" style={{ color: '#1e293b' }}>4:32</div>
+          <div className="small text-muted fw-medium">Avg Watchtime</div>
         </div>
       </div>
 

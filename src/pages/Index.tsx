@@ -9,10 +9,10 @@ import { QuickActions } from "@/components/QuickActions";
 
 const Index = () => {
   return (
-    <div className="min-vh-100" style={{ backgroundColor: '#ffffff' }}>
+    <div className="min-vh-100" style={{ backgroundColor: '#f8fafc' }}>
       <Header />
       
-      <main className="p-4">
+      <main className="p-4" style={{ padding: '2rem' }}>
         {/* Top Stats */}
         <div className="row g-4 mb-4">
           <div className="col-12 col-md-6 col-lg-3">

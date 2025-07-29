@@ -37,26 +37,26 @@ export const RecentlyPublished = () => {
   return (
     <div className="card p-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h5 className="mb-0 fw-semibold">RECENTLY PUBLISHED</h5>
-        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
+        <h5 className="section-title">RECENTLY PUBLISHED</h5>
+        <a href="#" className="view-all-link">
           View All →
-        </button>
+        </a>
       </div>
 
       <div className="table-responsive">
-        <table className="table table-borderless">
+        <table className="table table-borderless table-modern">
           <thead>
-            <tr className="border-bottom">
-              <th className="fw-semibold text-muted small border-0 pb-3">TITLE</th>
-              <th className="fw-semibold text-muted small border-0 pb-3">META</th>
-              <th className="fw-semibold text-muted small border-0 pb-3">MODIFIED</th>
-              <th className="fw-semibold text-muted small border-0 pb-3">ACTION</th>
+            <tr>
+              <th>TITLE</th>
+              <th>META</th>
+              <th>MODIFIED</th>
+              <th>ACTION</th>
             </tr>
           </thead>
           <tbody>
             {recentVideos.map((video) => (
-              <tr key={video.id} className="border-0">
-                <td className="border-0 py-3">
+              <tr key={video.id}>
+                <td>
                   <div className="d-flex align-items-center">
                     <img 
                       src={video.thumbnail} 
@@ -70,24 +70,24 @@ export const RecentlyPublished = () => {
                     </div>
                   </div>
                 </td>
-                <td className="border-0 py-3">
+                <td>
                   <div>
-                    <span className="badge bg-light text-dark me-2">{video.type}</span>
-                    <span className="badge bg-secondary">{video.category}</span>
+                    <span className="badge-modern badge-primary me-2">{video.type}</span>
+                    <span className="badge-modern badge-secondary">{video.category}</span>
                   </div>
                 </td>
-                <td className="border-0 py-3">
+                <td>
                   <div>
-                    <div className="small mb-1">{video.modified}</div>
+                    <div className="small mb-1 fw-medium" style={{ color: '#1e293b' }}>{video.modified}</div>
                     <div className="text-muted small">by {video.author}</div>
                   </div>
                 </td>
-                <td className="border-0 py-3">
+                <td>
                   <div className="d-flex gap-2">
-                    <button className="btn btn-outline-secondary btn-sm">
+                    <button className="btn-icon">
                       <Edit size={14} />
                     </button>
-                    <button className="btn btn-outline-secondary btn-sm">
+                    <button className="btn-icon">
                       <MoreHorizontal size={14} />
                     </button>
                   </div>

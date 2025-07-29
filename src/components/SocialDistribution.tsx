@@ -12,10 +12,10 @@ export const SocialDistribution = () => {
   return (
     <div className="card p-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h5 className="mb-0 fw-semibold">SOCIAL PLATFORM DISTRIBUTION</h5>
-        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
+        <h5 className="section-title">SOCIAL PLATFORM DISTRIBUTION</h5>
+        <a href="#" className="view-all-link">
           View All →
-        </button>
+        </a>
       </div>
 
       <div style={{ height: '264px' }}>

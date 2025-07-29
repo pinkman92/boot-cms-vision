@@ -46,10 +46,10 @@ export const TrendingVideos = () => {
   return (
     <div className="card p-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h5 className="mb-0 fw-semibold">TRENDING VIDEOS</h5>
-        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
+        <h5 className="section-title">TRENDING VIDEOS</h5>
+        <a href="#" className="view-all-link">
           View All →
-        </button>
+        </a>
       </div>
 
       <div className="row g-4">

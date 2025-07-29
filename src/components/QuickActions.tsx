@@ -41,27 +41,22 @@ const actions = [
 export const QuickActions = () => {
   return (
     <div className="card p-4">
-      <h5 className="fw-semibold mb-4">QUICK ACTIONS</h5>
+      <h5 className="section-title mb-4">QUICK ACTIONS</h5>
       
       <div className="row g-3">
         {actions.map((action) => {
           const Icon = action.icon;
           return (
             <div key={action.id} className="col-12 col-sm-6 col-lg">
-              <button className="btn btn-light w-100 p-4 text-center border-0 h-100" style={{ backgroundColor: '#f8fafc' }}>
+              <button className="action-button w-100 h-100 border-0">
                 <div 
-                  className="d-flex align-items-center justify-content-center mx-auto mb-3 rounded"
-                  style={{ 
-                    width: '48px', 
-                    height: '48px', 
-                    backgroundColor: action.color,
-                    transition: 'transform 0.2s'
-                  }}
+                  className="action-icon"
+                  style={{ backgroundColor: action.color }}
                 >
-                  <Icon size={24} color="white" />
+                  <Icon size={28} color="white" />
                 </div>
-                <h6 className="fw-semibold small mb-1">{action.title}</h6>
-                <p className="text-muted small mb-0 lh-base">{action.description}</p>
+                <h6 className="fw-semibold small mb-2" style={{ color: '#1e293b' }}>{action.title}</h6>
+                <p className="text-muted small mb-0 lh-base" style={{ fontSize: '0.8rem' }}>{action.description}</p>
               </button>
             </div>
           );
