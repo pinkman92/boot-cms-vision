@@ -1,92 +1,106 @@
-import { Card } from "@/components/ui/card";
-import { Eye, Share2, ThumbsUp, MoreHorizontal } from "lucide-react";
-import videoThumb1 from "@/assets/video-thumb-1.jpg";
-import videoThumb2 from "@/assets/video-thumb-2.jpg";
-import videoThumb3 from "@/assets/video-thumb-3.jpg";
+import { MoreHorizontal, Eye, Heart, Share2 } from "lucide-react";
 
 const videos = [
   {
     id: 1,
-    title: "Saudi Arabia has expan...",
-    channel: "NBT News | Meenadshi",
-    time: "2 hrs ago",
-    duration: "00:45",
-    thumbnail: videoThumb1,
-    stats: { views: "12K", likes: "324", shares: "45" }
+    title: "Amazing Sunset Timelapse",
+    channel: "Nature Films",
+    time: "2 hours ago",
+    duration: "3:24",
+    thumbnail: "/src/assets/video-thumb-1.jpg",
+    stats: {
+      views: "24K",
+      likes: "1.2K", 
+      shares: "45"
+    }
   },
   {
     id: 2,
-    title: "Saudi Arabia has expan...",
-    channel: "NBT News | Meenadshi",
-    time: "2 hrs ago",
-    duration: "00:45",
-    thumbnail: videoThumb2,
-    stats: { views: "8.5K", likes: "256", shares: "32" }
+    title: "City Life Documentary",
+    channel: "Urban Stories",
+    time: "5 hours ago", 
+    duration: "12:15",
+    thumbnail: "/src/assets/video-thumb-2.jpg",
+    stats: {
+      views: "156K",
+      likes: "8.3K",
+      shares: "234"
+    }
   },
   {
     id: 3,
-    title: "Saudi Arabia has expan...",
-    channel: "NBT News | Meenadshi",
-    time: "2 hrs ago",
-    duration: "00:45",
-    thumbnail: videoThumb3,
-    stats: { views: "15K", likes: "412", shares: "67" }
+    title: "Cooking Masterclass",
+    channel: "Chef's Table",
+    time: "1 day ago",
+    duration: "25:42", 
+    thumbnail: "/src/assets/video-thumb-3.jpg",
+    stats: {
+      views: "89K",
+      likes: "5.1K",
+      shares: "167"
+    }
   }
 ];
 
 export const TrendingVideos = () => {
   return (
-    <Card className="p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-foreground">TRENDING VIDEOS</h3>
-        <button className="text-sm text-primary hover:text-primary/80 font-medium">
+    <div className="card p-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h5 className="mb-0 fw-semibold">TRENDING VIDEOS</h5>
+        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
           View All →
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="row g-4">
         {videos.map((video) => (
-          <div key={video.id} className="group cursor-pointer">
-            <div className="relative mb-3">
+          <div key={video.id} className="col-12 col-md-4">
+            <div className="position-relative mb-3">
               <img 
                 src={video.thumbnail} 
                 alt={video.title}
-                className="w-full h-32 object-cover rounded-lg"
+                className="img-fluid rounded w-100"
+                style={{ aspectRatio: '16/9', objectFit: 'cover' }}
               />
-              <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
+              <span 
+                className="position-absolute bottom-0 end-0 bg-dark text-white px-2 py-1 rounded small me-2 mb-2"
+                style={{ fontSize: '0.75rem' }}
+              >
                 {video.duration}
-              </div>
+              </span>
             </div>
             
-            <div className="space-y-2">
-              <h4 className="font-medium text-sm text-foreground group-hover:text-primary transition-colors">
-                {video.title}
-              </h4>
-              <p className="text-xs text-muted-foreground">{video.channel} • {video.time}</p>
-              
-              <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center space-x-1">
-                    <Eye className="h-3 w-3" />
-                    <span>{video.stats.views}</span>
+            <div className="d-flex justify-content-between align-items-start">
+              <div className="flex-grow-1">
+                <h6 className="fw-semibold mb-1" style={{ fontSize: '0.875rem' }}>
+                  {video.title}
+                </h6>
+                <p className="text-muted small mb-2">{video.channel}</p>
+                <p className="text-muted small mb-3">{video.time}</p>
+                
+                <div className="d-flex align-items-center gap-3">
+                  <div className="d-flex align-items-center">
+                    <Eye size={14} className="text-muted me-1" />
+                    <span className="small text-muted">{video.stats.views}</span>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <ThumbsUp className="h-3 w-3" />
-                    <span>{video.stats.likes}</span>
+                  <div className="d-flex align-items-center">
+                    <Heart size={14} className="text-muted me-1" />
+                    <span className="small text-muted">{video.stats.likes}</span>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <Share2 className="h-3 w-3" />
-                    <span>{video.stats.shares}</span>
+                  <div className="d-flex align-items-center">
+                    <Share2 size={14} className="text-muted me-1" />
+                    <span className="small text-muted">{video.stats.shares}</span>
                   </div>
                 </div>
-                <button className="p-1 hover:bg-muted rounded">
-                  <MoreHorizontal className="h-3 w-3" />
-                </button>
               </div>
+              
+              <button className="btn btn-link text-muted p-1">
+                <MoreHorizontal size={16} />
+              </button>
             </div>
           </div>
         ))}
       </div>
-    </Card>
+    </div>
   );
 };

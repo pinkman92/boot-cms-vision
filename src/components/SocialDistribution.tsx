@@ -1,25 +1,24 @@
-import { Card } from "@/components/ui/card";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
 
 const data = [
-  { name: "Platform 1", value: 40, color: "hsl(var(--chart-1))" },
-  { name: "Platform 2", value: 30, color: "hsl(var(--chart-2))" },
-  { name: "Platform 3", value: 13, color: "hsl(var(--chart-3))" },
-  { name: "Platform 4", value: 10, color: "hsl(var(--chart-4))" },
-  { name: "Platform 5", value: 7, color: "hsl(var(--chart-5))" }
+  { name: "Platform 1", value: 40, color: "var(--chart-1)" },
+  { name: "Platform 2", value: 30, color: "var(--chart-2)" },
+  { name: "Platform 3", value: 13, color: "var(--chart-3)" },
+  { name: "Platform 4", value: 10, color: "var(--chart-4)" },
+  { name: "Platform 5", value: 7, color: "var(--chart-5)" }
 ];
 
 export const SocialDistribution = () => {
   return (
-    <Card className="p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-foreground">SOCIAL PLATFORM DISTRIBUTION</h3>
-        <button className="text-sm text-primary hover:text-primary/80 font-medium">
+    <div className="card p-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h5 className="mb-0 fw-semibold">SOCIAL PLATFORM DISTRIBUTION</h5>
+        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
           View All →
         </button>
       </div>
 
-      <div className="h-64">
+      <div style={{ height: '264px' }}>
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -39,7 +38,7 @@ export const SocialDistribution = () => {
               verticalAlign="bottom" 
               height={36}
               formatter={(value, entry) => (
-                <span className="text-sm text-muted-foreground">
+                <span className="small text-muted">
                   {entry.payload.value}%
                 </span>
               )}
@@ -47,6 +46,6 @@ export const SocialDistribution = () => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-    </Card>
+    </div>
   );
 };

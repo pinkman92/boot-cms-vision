@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { Video, Scissors, Mic, FolderOpen, Upload } from "lucide-react";
 
 const actions = [
@@ -7,60 +6,67 @@ const actions = [
     icon: Video,
     title: "VIDEOS",
     description: "Stream directly from your browser",
-    color: "bg-blue-500"
+    color: "#3b82f6"
   },
   {
     id: 2,
     icon: Scissors,
     title: "SHORTS", 
     description: "Stream from OBS, Wirecast, etc.",
-    color: "bg-green-500"
+    color: "#10b981"
   },
   {
     id: 3,
     icon: Mic,
     title: "AUDIO",
     description: "Livestream pre-recorded videos", 
-    color: "bg-orange-500"
+    color: "#f59e0b"
   },
   {
     id: 4,
     icon: FolderOpen,
     title: "LIBRARY",
     description: "Save a recording without going live",
-    color: "bg-purple-500"
+    color: "#8b5cf6"
   },
   {
     id: 5,
     icon: Upload,
     title: "CUSTOM UPLOAD",
     description: "Upload your own content directly",
-    color: "bg-red-500"
+    color: "#ef4444"
   }
 ];
 
 export const QuickActions = () => {
   return (
-    <Card className="p-6">
-      <h3 className="text-lg font-semibold text-foreground mb-6">QUICK ACTIONS</h3>
+    <div className="card p-4">
+      <h5 className="fw-semibold mb-4">QUICK ACTIONS</h5>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="row g-3">
         {actions.map((action) => {
           const Icon = action.icon;
           return (
-            <button
-              key={action.id}
-              className="p-4 text-center hover:bg-muted/50 rounded-lg transition-colors group"
-            >
-              <div className={`w-12 h-12 ${action.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-105 transition-transform`}>
-                <Icon className="h-6 w-6 text-white" />
-              </div>
-              <h4 className="font-semibold text-sm text-foreground mb-1">{action.title}</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">{action.description}</p>
-            </button>
+            <div key={action.id} className="col-12 col-sm-6 col-lg">
+              <button className="btn btn-light w-100 p-4 text-center border-0 h-100" style={{ backgroundColor: '#f8fafc' }}>
+                <div 
+                  className="d-flex align-items-center justify-content-center mx-auto mb-3 rounded"
+                  style={{ 
+                    width: '48px', 
+                    height: '48px', 
+                    backgroundColor: action.color,
+                    transition: 'transform 0.2s'
+                  }}
+                >
+                  <Icon size={24} color="white" />
+                </div>
+                <h6 className="fw-semibold small mb-1">{action.title}</h6>
+                <p className="text-muted small mb-0 lh-base">{action.description}</p>
+              </button>
+            </div>
           );
         })}
       </div>
-    </Card>
+    </div>
   );
 };

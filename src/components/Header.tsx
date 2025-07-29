@@ -1,47 +1,46 @@
 import { Search, Bell, Settings, Grid3X3, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export const Header = () => {
   return (
-    <header className="bg-card border-b border-border px-6 py-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-2">
-            <div className="text-xl font-bold text-primary">SIIK</div>
+    <header className="bg-white border-bottom border-secondary px-4 py-3">
+      <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center me-5">
+            <div className="h4 fw-bold text-primary mb-0">SIIK</div>
           </div>
           
-          <nav className="hidden md:flex items-center space-x-6">
-            <button className="text-sm font-medium text-primary border-b-2 border-primary pb-1">
+          <nav className="d-none d-md-flex align-items-center">
+            <button className="btn btn-link text-primary text-decoration-none fw-medium me-4 border-bottom border-primary border-2 pb-1">
               CONTENT
             </button>
-            <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button className="btn btn-link text-muted text-decoration-none fw-medium me-4">
               DISCOVER
             </button>
-            <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button className="btn btn-link text-muted text-decoration-none fw-medium me-4">
               ANALYTICS
             </button>
-            <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button className="btn btn-link text-muted text-decoration-none fw-medium">
               LIVE
             </button>
           </nav>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm">
-            <Search className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="sm">
-            <Bell className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="sm">
-            <Settings className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="sm">
-            <Grid3X3 className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="sm" className="rounded-full">
-            <User className="h-4 w-4" />
-          </Button>
+        <div className="d-flex align-items-center">
+          <button className="btn btn-outline-secondary btn-sm me-2">
+            <Search size={16} />
+          </button>
+          <button className="btn btn-outline-secondary btn-sm me-2">
+            <Bell size={16} />
+          </button>
+          <button className="btn btn-outline-secondary btn-sm me-2">
+            <Settings size={16} />
+          </button>
+          <button className="btn btn-outline-secondary btn-sm me-2">
+            <Grid3X3 size={16} />
+          </button>
+          <button className="btn btn-outline-secondary btn-sm rounded-circle">
+            <User size={16} />
+          </button>
         </div>
       </div>
     </header>

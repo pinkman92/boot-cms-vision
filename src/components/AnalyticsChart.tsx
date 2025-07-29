@@ -1,64 +1,58 @@
-import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 
 const data = [
-  { month: "Jan", value: 3000 },
-  { month: "Feb", value: 4500 },
-  { month: "Mar", value: 5200 },
-  { month: "Apr", value: 3800 },
-  { month: "May", value: 3100 },
+  { name: "Jan", value: 400 },
+  { name: "Feb", value: 300 },
+  { name: "Mar", value: 600 },
+  { name: "Apr", value: 800 },
+  { name: "May", value: 700 },
+  { name: "Jun", value: 900 }
 ];
 
 export const AnalyticsChart = () => {
   return (
-    <Card className="p-6">
-      <div className="space-y-6">
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">ANALYTICS</h3>
-          
-          {/* Topline metrics */}
-          <div className="grid grid-cols-2 gap-6 mb-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">1.2M</div>
-              <div className="text-sm text-muted-foreground">Video Views</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">4:35</div>
-              <div className="text-sm text-muted-foreground">Avg Watchtime</div>
-            </div>
-          </div>
-        </div>
+    <div className="card p-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h5 className="mb-0 fw-semibold">ANALYTICS</h5>
+        <button className="btn btn-link text-primary text-decoration-none small fw-medium p-0">
+          View All →
+        </button>
+      </div>
 
-        <div className="h-64">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis 
-                dataKey="month" 
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
-              />
-              <YAxis 
-                axisLine={false}
-                tickLine={false}
-                tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
-              />
-              <Bar 
-                dataKey="value" 
-                fill="hsl(var(--chart-1))" 
-                radius={[4, 4, 0, 0]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+      <div className="row mb-4">
+        <div className="col-6">
+          <div className="h3 fw-bold mb-1">1.2M</div>
+          <div className="small text-muted">Video Views</div>
         </div>
-
-        <div className="text-center">
-          <button className="text-sm text-primary hover:text-primary/80 font-medium">
-            View All →
-          </button>
+        <div className="col-6">
+          <div className="h3 fw-bold mb-1">4:32</div>
+          <div className="small text-muted">Avg Watchtime</div>
         </div>
       </div>
-    </Card>
+
+      <div style={{ height: '200px' }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+            <XAxis 
+              dataKey="name" 
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#64748b', fontSize: 12 }}
+            />
+            <YAxis 
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#64748b', fontSize: 12 }}
+            />
+            <Bar 
+              dataKey="value" 
+              fill="var(--bs-primary)" 
+              radius={[4, 4, 0, 0]}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
   );
 };
